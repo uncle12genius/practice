@@ -1,49 +1,26 @@
-import java.util.Scanner;
+import java.util. Arrays;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main (String[]args) {
+        int[] num = new int[6];
+        int n = 5;
 
-        System.out.print("What is your name? ");
-        String name = scanner.nextLine();
+        num[0] = 18;
+        num[1] = 20;
+        num[2] = 24;
+        num[3] = 70;
+        num[4] = 40;
+        System.out.println("Before insertion :" + Arrays.toString(num));
 
-        System.out.printf("Hello %s! How old are you? ", name);
-        int age = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        int element = 709;
+        int pos = 3;
 
-        if (age > 20) {
-            System.out.println("It is not a perfect age for practicing programming.");
-        } else {
-            System.out.println("It is a perfect age to start programming.");
+        for (int i = n - 1; i >= pos - 1; i--) {
+            num [i + 1] = num[1];
+        }
+     num[pos -1 ]= element;
+        n++;
+     System.out.println("After insertion ;" + Arrays.toString(num));
         }
 
-        System.out.println("Which language do you prefer for programming?");
-        System.out.println("A. Python\nB. Java\nC. Javascript\nD. Html");
-        System.out.print("Enter your choice (A-D): ");
-        String program = scanner.nextLine().trim().toUpperCase();
-
-        if (program.length() > 0) {
-            char choice = program.charAt(0);
-            switch (choice) {
-                case 'A':
-                    System.out.println("Python is excellent for beginners and data science!");
-                    break;
-                case 'B':
-                    System.out.println("Java is powerful for enterprise applications!");
-                    break;
-                case 'C':
-                    System.out.println("JavaScript is essential for web development!");
-                    break;
-                case 'D':
-                    System.out.println("HTML is the backbone of web content!");
-                    break;
-                default:
-                    System.out.println("Invalid selection. Try choosing between A-D.");
-            }
-        } else {
-            System.out.println("No input provided.");
-        }
-
-        scanner.close();
     }
-}
